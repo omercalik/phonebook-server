@@ -16,5 +16,6 @@
     "mongoose": "^5.12.2",
     "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0"
-  }
+  },
+  "proxy": "http://fierce-badlands-58853.herokuapp.com/"
 }
