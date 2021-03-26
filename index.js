@@ -13,6 +13,7 @@ const errorHandler = (error, request, response, next) => {
 
 const app = express()
 const PORT = process.env.PORT || 3001
+console.log(PORT)
 app.use(cors())
 app.use(express.json())
 morgan.token("body", (req, res) => JSON.stringify(req.body))
