@@ -1,7 +1,7 @@
 const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
-const proxy = require("express-http-proxy")
+
 const Contact = require("./mongo")
 
 const errorHandler = (error, request, response, next) => {
@@ -15,7 +15,6 @@ const app = express()
 const PORT = process.env.PORT || 3001
 console.log(PORT)
 app.use(cors())
-app.use(["/api"], { target: "https://fierce-badlands-58853.herokuapp.com/" })
 app.use(express.json())
 morgan.token("body", (req, res) => JSON.stringify(req.body))
 app.use(
