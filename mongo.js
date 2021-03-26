@@ -4,12 +4,17 @@ require("dotenv").config()
 
 const url = process.env.MONGODB_URI
 
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-})
+mongoose
+  .connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log("MONGO connected")
+  })
+  .catch((err) => console.log(err))
 
 const contactSchema = new mongoose.Schema({
   name: {
