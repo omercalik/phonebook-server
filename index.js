@@ -54,9 +54,11 @@ app.put("/api/persons/:id", (request, response, next) => {
 })
 
 app.get("/api/persons", (request, response) => {
-  Contact.find({}).then((result) => {
-    response.json(result)
-  })
+  Contact.find({})
+    .then((result) => {
+      response.json(result)
+    })
+    .catch((err) => console.log(err))
 })
 
 app.post("/api/persons", (request, response, next) => {
